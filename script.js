@@ -37,7 +37,7 @@
       b = rand(255, 2);
       node = generateNode(width, r, g, b);
       injectDom(node);
-      results.push(count += 1);
+      results.push(count++);
     }
     return results;
   };
@@ -45,3 +45,5 @@
   generate(rand(12, 6)) && setInterval(regenerate, 250);
 
 }).call(this);
+
+//# sourceMappingURL=script.js.map

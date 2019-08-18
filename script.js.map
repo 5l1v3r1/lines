@@ -1,0 +1,13 @@
+{
+  "version": 3,
+  "file": "script.js",
+  "sourceRoot": "",
+  "sources": [
+    "script.coffee"
+  ],
+  "names": [],
+  "mappings": ";AAAA;AAAA,MAAA,QAAA,EAAA,YAAA,EAAA,SAAA,EAAA,IAAA,EAAA;;EAAA,YAAA,GAAe,QAAA,CAAC,KAAD,EAAQ,CAAR,EAAW,CAAX,EAAc,CAAd,CAAA;AACb,QAAA;IAAA,UAAA,GAAa,QAAQ,CAAC,aAAT,CAAuB,GAAvB;IACb,UAAU,CAAC,SAAX,GAAuB;IACvB,UAAU,CAAC,KAAX,GAAmB,wBAAA,GAA2B,CAA3B,GAA+B,IAA/B,GAAsC,CAAtC,GAA0C,IAA1C,GAAiD,CAAjD,GAAqD;IACxE,UAAU,CAAC,KAAK,CAAC,KAAjB,GAAyB,KAAA,GAAQ;AACjC,WAAO;EALM;;EAOf,SAAA,GAAY,QAAA,CAAC,MAAD,CAAA;AACV,QAAA;IAAA,GAAA,GAAM,QAAQ,CAAC,cAAT,CAAwB,UAAxB;WACN,GAAG,CAAC,WAAJ,CAAgB,MAAhB;EAFU;;EAIZ,IAAA,GAAO,QAAA,CAAC,GAAD,EAAM,GAAN,CAAA;AACL,WAAO,IAAI,CAAC,KAAL,CAAW,IAAI,CAAC,MAAL,CAAA,CAAA,GAAgB,GAA3B,CAAA,GAAkC;EADpC;;EAGP,UAAA,GAAa,QAAA,CAAA,CAAA;IACX,QAAQ,CAAC,cAAT,CAAwB,UAAxB,CACE,CAAC,UAAW,CAAA,CAAA,CACZ,CAAC,MAFH,CAAA;WAGA,QAAA,CAAS,CAAT;EAJW;;EAMb,QAAA,GAAW,QAAA,CAAC,MAAD,CAAA;AACT,QAAA,CAAA,EAAA,KAAA,EAAA,CAAA,EAAA,IAAA,EAAA,CAAA,EAAA,OAAA,EAAA;IAAA,KAAA,GAAQ;AACR;WAAM,KAAA,KAAS,MAAf;MACE,KAAA,GAAQ,IAAA,CAAK,EAAL,EAAS,CAAT;MACR,CAAA,GAAI,IAAA,CAAK,GAAL,EAAU,CAAV;MACJ,CAAA,GAAI,IAAA,CAAK,GAAL,EAAU,CAAV;MACJ,CAAA,GAAI,IAAA,CAAK,GAAL,EAAU,CAAV;MACJ,IAAA,GAAO,YAAA,CAAa,KAAb,EAAoB,CAApB,EAAuB,CAAvB,EAA0B,CAA1B;MACP,SAAA,CAAU,IAAV;mBACA,KAAA;IAPF,CAAA;;EAFS;;EAWX,QAAA,CAAS,IAAA,CAAK,EAAL,EAAS,CAAT,CAAT,CAAA,IAA0B,WAAA,CAAa,UAAb,EAAyB,GAAzB;AA/B1B",
+  "sourcesContent": [
+    "generateNode = (width, r, g, b) ->\n  objectNode = document.createElement('p')\n  objectNode.className = 'round container'\n  objectNode.style = 'border: 2px solid rgb(' + r + ', ' + g + ', ' + b + ')';\n  objectNode.style.width = width + 'rem';\n  return objectNode\n\ninjectDom = (object) ->\n  app = document.getElementById('app-root')\n  app.appendChild(object)\n\nrand = (int, min) ->\n  return Math.floor(Math.random() * int) + min\n\nregenerate = () ->\n  document.getElementById('app-root')\n    .childNodes[0]\n    .remove()\n  generate(2)\n\ngenerate = (amount) ->\n  count = 1\n  while count != amount\n    width = rand(24, 1)\n    r = rand(255, 2)\n    g = rand(255, 2)\n    b = rand(255, 2)\n    node = generateNode(width, r, g, b)\n    injectDom(node)\n    count++\n\ngenerate(rand(12, 6)) and setInterval( regenerate, 250 )\n"
+  ]
+}

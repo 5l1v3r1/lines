@@ -27,6 +27,6 @@ generate = (amount) ->
     b = rand(255, 2)
     node = generateNode(width, r, g, b)
     injectDom(node)
-    count += 1
+    count++
 
 generate(rand(12, 6)) and setInterval( regenerate, 250 )
