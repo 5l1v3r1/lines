@@ -1,23 +1,33 @@
+# The root element where everything spawns within
+app = document.getElementById('app-root')
+
+###
+  r = red
+  g = green
+  b = blue
+###
 generateNode = (width, r, g, b) ->
   objectNode = document.createElement('p')
   objectNode.className = 'round container'
-  objectNode.style = 'border: 2px solid rgb(' + r + ', ' + g + ', ' + b + ')';
+  objectNode.style = "border: 2px solid rgb(#{r}, #{g}, #{b})";
   objectNode.style.width = width + 'rem';
   return objectNode
 
 injectDom = (object) ->
-  app = document.getElementById('app-root')
   app.appendChild(object)
 
-rand = (int, min) ->
-  return Math.floor(Math.random() * int) + min
+rand = (max, min) ->
+  return Math.floor(Math.random() * max) + min
 
-regenerate = () ->
-  document.getElementById('app-root')
+
+# Remove the first child and generate a new one
+regenerate = ->
+  app
     .childNodes[0]
     .remove()
   generate(2)
 
+# Generates individual lines
 generate = (amount) ->
   count = 1
   while count != amount
@@ -29,4 +39,11 @@ generate = (amount) ->
     injectDom(node)
     count++
 
+###
+When the windows first loads generate a full set of random
+lines then start remove the first child and inject a freshly
+generated line
+###
 generate(rand(12, 6)) and setInterval( regenerate, 250 )
+
+`//# sourceMappingURL=script.js.map`
