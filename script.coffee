@@ -7,17 +7,25 @@ app = document.getElementById('app-root')
   b = blue
 ###
 generateNode = (width, r, g, b) ->
-  objectNode = document.createElement('p')
-  objectNode.className = 'round container'
-  objectNode.style = "border: 2px solid rgb(#{r}, #{g}, #{b})";
-  objectNode.style.width = width + 'rem';
+  objectNode = document.createElement('div')
+  objectNode
+    .className = 'round container'
+  objectNode
+    .style = "border: 0.4rem solid rgb(#{r}, #{g}, #{b})";
+  objectNode
+    .style.width = width + 'rem';
   return objectNode
 
 injectDom = (object) ->
-  app.appendChild(object)
+  app
+    .appendChild(object)
 
 rand = (max, min) ->
-  return Math.floor(Math.random() * max) + min
+  return Math
+    .floor(
+      Math
+        .random() * max
+      ) + min
 
 # Remove the first child and generate a new one
 regenerate = ->
