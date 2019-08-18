@@ -40,10 +40,10 @@ generate = (amount) ->
     count++
 
 ###
-When the windows first loads generate a full set of random
-lines then start remove the first child and inject a freshly
-generated line
+When the windows first loads,
+the script generates a full set
+of random lines and then removes
+the first child and inject a freshly
+generated one
 ###
 generate(rand(12, 6)) and setInterval( regenerate, 250 )
-
-`//# sourceMappingURL=script.js.map`
