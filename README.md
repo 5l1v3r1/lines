@@ -1,2 +1,4 @@
-# lines
-Just a bunch a lines
+# Lines
+
+Just a bunch of lines
+[beyarz.github.io/lines](https://beyarz.github.io/lines)
