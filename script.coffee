@@ -1,11 +1,5 @@
-# The root element where everything spawns within
 app = document.getElementById('app-root')
 
-###
-  r = red
-  g = green
-  b = blue
-###
 generateNode = (width, r, g, b) ->
   objectNode = document.createElement('div')
   objectNode
@@ -27,14 +21,12 @@ rand = (max, min) ->
         .random() * max
       ) + min
 
-# Remove the first child and generate a new one
 regenerate = ->
   app
     .childNodes[0]
     .remove()
   generate(2)
 
-# Generates individual lines
 generate = (amount) ->
   count = 1
   while count != amount
