@@ -1,4 +1,4 @@
-prepend(id, content) =>
+prepend = (id, content) =>
   document.getElementById(id).innerHTML = content
 
 prepend('nav',
